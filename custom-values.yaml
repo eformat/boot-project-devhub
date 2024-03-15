@@ -1,18 +1,18 @@
 upstream:
   backstage:
     extraEnvVars:
-    - name: LOG_LEVEL
-      value: debug
-    - name: GITHUB_TOKEN
-      valueFrom:
-        secretKeyRef:
-          name: git-auth
-          key: password
+      - name: LOG_LEVEL
+        value: debug
+      - name: GITHUB_TOKEN
+        valueFrom:
+          secretKeyRef:
+            name: git-auth
+            key: password
     appConfig:
       catalog:
         locations:
-        - target: https://github.com/eformat/boot-project-devhub/tree/main/backstage-templates/namespace/template.yaml
-          type: url
+          - target: https://github.com/eformat/boot-project-devhub/tree/main/backstage-templates/namespace/template.yaml
+            type: url
       integrations:
         github:
           - host: github.com

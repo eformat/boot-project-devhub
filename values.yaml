@@ -48,6 +48,14 @@ upstream:
     # create multiple DBs. Since Backstage requires by default 5 different DBs, we
     # can't accommodate that properly.
     appConfig:
+      catalog:
+        locations:
+          - target: https://github.com/eformat/boot-project-devhub/tree/main/backstage-templates/namespace/template.yaml
+            type: url
+      integrations:
+        github:
+          - host: github.com
+            token: ${GITHUB_TOKEN}
       app:
         # Please update to match host in case you don't want to configure hostname via `global.clusterRouterBase` or `global.host`.
         baseUrl: 'https://{{- include "janus-idp.hostname" . }}'
@@ -83,6 +91,13 @@ upstream:
       successThreshold: 1
       timeoutSeconds: 2
     extraEnvVars:
+      - name: LOG_LEVEL
+        value: debug
+      - name: GITHUB_TOKEN
+        valueFrom:
+          secretKeyRef:
+            name: git-auth
+            key: password
       - name: BACKEND_SECRET
         valueFrom:
           secretKeyRef:

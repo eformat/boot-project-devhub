@@ -73,7 +73,7 @@ spec:
       name: make a pr with the new namespace
       action: publish:github:pull-request
       input:
-        repoUrl: github.com?repo=namespaces&owner=environment-aas
+        repoUrl: github.com?repo=boot-project-values&owner=eformat
         branchName: ${{ parameters.application }}-${{ parameters.environment }}
         title: ${{ parameters.cluster }}/${{ parameters.application }}-${{ parameters.environment }} namespace
         description: This is a request for the creation of the ${{ parameters.application }}-${{ parameters.environment }} namespace in the ${{ parameters.cluster }} from the ${{ parameters.owner }} team
