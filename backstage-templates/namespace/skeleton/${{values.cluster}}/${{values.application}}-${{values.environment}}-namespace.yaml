@@ -11,15 +11,15 @@ namespaces:
       slaTier: "1"
       drRating: "3"
     bindings:
-      - name: project1-admin
+      - name: ${{values.applicationId}}-admin
         kind: Group
         role: admin
         roleType: ClusterRole
-      - name: project1-edit
+      - name: ${{values.applicationId}}-edit
         kind: Group
         role: edit
         roleType: ClusterRole
-      - name: project1-view
+      - name: ${{values.applicationId}}-view
         kind: Group
         role: view
         roleType: ClusterRole
