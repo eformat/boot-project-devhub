@@ -1,0 +1,14 @@
+global:
+  clusterRouterBase: apps.${BASE_DOMAIN}
+
+upstream:
+  backstage:
+    appConfig:
+      catalog:
+        locations:
+        - target: https://github.com/eformat/boot-project-devhub/tree/main/backstage-templates/namespace/template.yaml
+          type: url
+      integrations:
+        github:
+          - host: github.com
+            token: ${GITHUB_TOKEN}
