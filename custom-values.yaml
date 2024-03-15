@@ -1,8 +1,13 @@
-global:
-  clusterRouterBase: apps.${BASE_DOMAIN}
-
 upstream:
   backstage:
+    extraEnvVars:
+    - name: LOG_LEVEL
+      value: debug
+    - name: GITHUB_TOKEN
+      valueFrom:
+        secretKeyRef:
+          name: git-auth
+          key: password
     appConfig:
       catalog:
         locations:
