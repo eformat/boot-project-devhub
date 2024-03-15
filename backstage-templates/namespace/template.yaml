@@ -2,7 +2,7 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: environment-template
-  title: Envrionment Request Template
+  title: Environment Request Template
   description: Request the Creation of an environment 
   tags:
     - recommended
@@ -15,17 +15,17 @@ spec:
   parameters:
     - title: Environment Request
       required:
-        - application
+        - applicationId
         - owner
         - environment
         - cluster
         - size
         - description
       properties:
-        application:
-          title: Application
+        applicationId:
+          title: Application Id
           type: string
-          description: Application which will use this environment      
+          description: Application Id which will use this environment
         environment:
           title: Environment
           type: string
@@ -44,7 +44,7 @@ spec:
           title: Size
           type: string
           description: Size of the namespace in terms of resources available
-          enum: ["small", "medium", "large"]                     
+          enum: ["small", "medium", "large"]
         owner:
           title: Owner
           type: string
@@ -53,7 +53,6 @@ spec:
           ui:options:
             allowedKinds: 
               - Group
-
   steps:
     - id: template
       name: Code Fetch Skeleton + Template
@@ -66,15 +65,13 @@ spec:
           cluster: ${{ parameters.cluster }}
           environment: ${{ parameters.environment }}
           owner: ${{ parameters.owner.split("/")[1] }}
-          application: ${{ parameters.application }}
-          size: ${{parameters.size}}  
-
+          application: ${{ parameters.applicationId }}
+          size: ${{parameters.size}}
     - id: pull-request
       name: make a pr with the new namespace
       action: publish:github:pull-request
       input:
         repoUrl: github.com?repo=boot-project-values&owner=eformat
-        branchName: ${{ parameters.application }}-${{ parameters.environment }}
-        title: ${{ parameters.cluster }}/${{ parameters.application }}-${{ parameters.environment }} namespace
-        description: This is a request for the creation of the ${{ parameters.application }}-${{ parameters.environment }} namespace in the ${{ parameters.cluster }} from the ${{ parameters.owner }} team
-                               
+        branchName: ${{ parameters.applicationId }}-${{ parameters.environment }}
+        title: ${{ parameters.cluster }}/${{ parameters.applicationId }}-${{ parameters.environment }} namespace
+        description: This is a request for the creation of the ${{ parameters.applicationId }}-${{ parameters.environment }} namespace in the ${{ parameters.cluster }} from the ${{ parameters.owner }} team
