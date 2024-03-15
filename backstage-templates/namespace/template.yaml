@@ -29,7 +29,7 @@ spec:
         environment:
           title: Environment
           type: string
-          enum: ["dev", "qa", "prod"]
+          enum: ["dev", "test", "prod"]
           description: Purpose for this environment
         description:
           title: Description
@@ -73,5 +73,5 @@ spec:
       input:
         repoUrl: github.com?repo=boot-project-values&owner=eformat
         branchName: ${{ parameters.applicationId }}-${{ parameters.environment }}
-        title: ${{ parameters.cluster }}/${{ parameters.applicationId }}-${{ parameters.environment }} namespace
+        title: clusters/${{ parameters.cluster }}/${{ parameters.applicationId }}-${{ parameters.environment }} namespace
         description: This is a request for the creation of the ${{ parameters.applicationId }}-${{ parameters.environment }} namespace in the ${{ parameters.cluster }} from the ${{ parameters.owner }} team
