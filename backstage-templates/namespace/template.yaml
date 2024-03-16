@@ -76,6 +76,7 @@ spec:
                 requestsMemory:
                   type: string
                   default: "4Gi"
+                  ui:readonly: true
                 persistentVolumeClaims:
                   type: string
                   default: "5"
