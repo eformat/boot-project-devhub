@@ -160,6 +160,6 @@ spec:
       action: publish:github:pull-request
       input:
         repoUrl: github.com?repo=boot-project-values&owner=eformat
-        branchName: -${{ parameters.applicationId }}-${{ parameters.environment }}-${{ parameters.cluster }}
+        branchName: ${{ parameters.applicationId }}-${{ parameters.environment }}-${{ parameters.cluster }}
         title: clusters/${{ parameters.cluster }}/${{ parameters.applicationId }}-${{ parameters.environment }} namespace
         description: This is a request for the creation of the ${{ parameters.applicationId }}-${{ parameters.environment }} namespace in the ${{ parameters.cluster }} from the ${{ parameters.owner }} team
