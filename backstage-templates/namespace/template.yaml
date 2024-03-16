@@ -30,7 +30,6 @@ spec:
           title: Environment
           type: string
           enum: ["dev", "test", "prod"]
-          ui:widget: checkboxes
           description: Purpose for this environment
         description:
           title: Description
@@ -40,14 +39,13 @@ spec:
           title: Cluster
           type: string
           description: Cluster in which the namespace for this environment will be created
-          ui:widget: checkboxes
           enum: ["non-prod", "prod"]
         size:
           title: Size
           type: string
           description: Size of the namespace in terms of resources available
-          ui:widget: checkboxes
           enum: ["small", "medium", "large"]
+          ui:widget: radio
         owner:
           title: Owner
           type: string
