@@ -61,7 +61,7 @@ spec:
                 properties:
                   size:
                     enum:
-                      - "small"
+                      - small
               then:
                 properties:
                   limitsMemory:
@@ -96,6 +96,7 @@ spec:
                   requestsStorage:
                     type: string
                     default: "100Gi"
+            required: limitsMemory requestCpu requestsMemory persistentvolumeclaims requestsStorage
 
   steps:
     - id: template
