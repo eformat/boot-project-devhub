@@ -68,18 +68,18 @@ spec:
                   title: Memory
                   type: string
                   default: "4Gi"
-                  # requestsCpu:
-                  #   type: string
-                  #   default: "2"
-                  # requestsMemory:
-                  #   type: string
-                  #   default: "4Gi"
-                  # persistentvolumeclaims:
-                  #   type: string
-                  #   default: "5"
-                  # requestsStorage:
-                  #   type: string
-                  #   default: "50Gi"
+                requestsCpu:
+                  type: string
+                  default: "2"
+                requestsMemory:
+                  type: string
+                  default: "4Gi"
+                persistentVolumeClaims:
+                  type: string
+                  default: "5"
+                requestsStorage:
+                  type: string
+                  default: "50Gi"
 
   steps:
     - id: template
