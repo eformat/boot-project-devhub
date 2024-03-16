@@ -2,12 +2,12 @@
 namespaces:
   - name: ${{values.applicationId}}-${{values.environment}}
     enabled: true
-    displayName: ${{values.applicationId}}-${{values.environment}}
-    description: ${{values.descriptionId}}
+    displayName: "${{values.applicationId}}-${{values.environment}}"
+    description: "${{values.descriptionId}}"
     labels:
-      appId: ${{values.applicationId}}
-      techArea: ${{values.environment}}
-      owner: ${{values.owner}}
+      appId: "${{values.applicationId}}"
+      techArea: "${{values.environment}}"
+      owner: "${{values.owner}}"
       slaTier: "1"
       drRating: "3"
     bindings:
