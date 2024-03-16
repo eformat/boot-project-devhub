@@ -26,10 +26,10 @@ namespaces:
     operatorgroup: false
     resourceQuota:
       hard:
-        limits.memory: ${{values.limitsMemory}}
-        requests.cpu: "2"
-        requests.memory: "8Gi"
-        persistentvolumeclaims: "5"
-        requests.storage: "100Gi"
+        limits.memory: "${{values.limitsMemory}}"
+        requests.cpu: "${{values.requestsCPU}}"
+        requests.memory: "${{values.requestsMemory}}"
+        persistentvolumeclaims: "${{values.persistentVolumeClaims}}"
+        requests.storage: "${{values.requestsStorage}}"
     egressIps:
       - 192.168.17.101

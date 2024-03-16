@@ -80,6 +80,26 @@ spec:
                 requestsStorage:
                   type: string
                   default: "50Gi"
+            - properties:
+                size:
+                  enum:
+                    - medium
+                limitsMemory:
+                  title: Memory
+                  type: string
+                  default: "8Gi"
+                requestsCpu:
+                  type: string
+                  default: "4"
+                requestsMemory:
+                  type: string
+                  default: "8Gi"
+                persistentVolumeClaims:
+                  type: string
+                  default: "10"
+                requestsStorage:
+                  type: string
+                  default: "100Gi"
 
   steps:
     - id: template
