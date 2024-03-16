@@ -1,8 +1,8 @@
 ---
 namespaces:
-  - name: ${{values.applicationId}}-${{values.purpose}}
+  - name: ${{values.applicationId}}-${{values.environment}}
     enabled: true
-    displayName: ${{values.applicationId}}-${{values.purpose}}
+    displayName: ${{values.applicationId}}-${{values.environment}}
     description: ${{values.descriptionId}}
     labels:
       appId: ${{values.applicationId}}
