@@ -96,7 +96,6 @@ spec:
                   requestsStorage:
                     type: string
                     default: "100Gi"
-            required: limitsMemory requestCpu requestsMemory persistentvolumeclaims requestsStorage
 
   steps:
     - id: template
