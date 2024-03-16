@@ -65,7 +65,7 @@ spec:
           cluster: ${{ parameters.cluster }}
           environment: ${{ parameters.environment }}
           owner: ${{ parameters.owner.split("/")[1] }}
-          application: ${{ parameters.applicationId }}
+          applicationId: ${{ parameters.applicationId }}
           size: ${{parameters.size}}
     - id: pull-request
       name: make a pr with the new namespace
