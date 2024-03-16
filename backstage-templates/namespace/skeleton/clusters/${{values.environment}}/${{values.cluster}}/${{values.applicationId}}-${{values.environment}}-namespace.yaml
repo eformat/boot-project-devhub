@@ -3,7 +3,7 @@ namespaces:
   - name: ${{values.applicationId}}-${{values.environment}}
     enabled: true
     displayName: "${{values.applicationId}}-${{values.environment}}"
-    description: "${{values.descriptionId}}"
+    description: "${{values.description}}"
     labels:
       appId: "${{values.applicationId}}"
       techArea: "${{values.environment}}"
