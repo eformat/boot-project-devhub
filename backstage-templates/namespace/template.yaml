@@ -60,17 +60,14 @@ spec:
       dependencies:
         size:
           oneOf:
-            - if:
-                properties:
-                  size:
-                    enum:
-                      - small
-              then:
-                properties:
-                  limitsMemory:
-                    title: Memory
-                    type: string
-                    default: "4Gi"
+            - properties:
+                size:
+                  enum:
+                    - small
+                limitsMemory:
+                  title: Memory
+                  type: string
+                  default: "4Gi"
                   # requestsCpu:
                   #   type: string
                   #   default: "2"
