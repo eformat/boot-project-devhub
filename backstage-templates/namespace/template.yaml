@@ -55,7 +55,7 @@ spec:
         environment:
           oneOf:
             - properties:
-                size:
+                environment:
                   enum:
                     - dev
                 cluster:
@@ -65,7 +65,7 @@ spec:
                   enum: ["ocp-dev-1", "ocp-dev-2", "ocp-dev-3"]
                   ui:widget: radio
             - properties:
-                size:
+                environment:
                   enum:
                     - test
                 cluster:
@@ -75,7 +75,7 @@ spec:
                   enum: ["ocp-npr-1", "ocp-npr-2"]
                   ui:widget: radio
             - properties:
-                size:
+                environment:
                   enum:
                     - prod
                 cluster:
