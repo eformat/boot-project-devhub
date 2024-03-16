@@ -68,18 +68,22 @@ spec:
                   title: Memory
                   type: string
                   default: "4Gi"
+                  ui:readonly: true
                 requestsCpu:
                   type: string
                   default: "2"
+                  ui:readonly: true
                 requestsMemory:
                   type: string
                   default: "4Gi"
                 persistentVolumeClaims:
                   type: string
                   default: "5"
+                  ui:readonly: true
                 requestsStorage:
                   type: string
                   default: "50Gi"
+                  ui:readonly: true
             - properties:
                 size:
                   enum:
@@ -88,18 +92,23 @@ spec:
                   title: Memory
                   type: string
                   default: "8Gi"
+                  ui:readonly: true
                 requestsCpu:
                   type: string
                   default: "4"
+                  ui:readonly: true
                 requestsMemory:
                   type: string
                   default: "8Gi"
+                  ui:readonly: true
                 persistentVolumeClaims:
                   type: string
                   default: "10"
+                  ui:readonly: true
                 requestsStorage:
                   type: string
                   default: "100Gi"
+                  ui:readonly: true
             - properties:
                 size:
                   enum:
@@ -108,18 +117,23 @@ spec:
                   title: Memory
                   type: string
                   default: "16Gi"
+                  ui:readonly: true
                 requestsCpu:
                   type: string
                   default: "12"
+                  ui:readonly: true
                 requestsMemory:
                   type: string
                   default: "16Gi"
+                  ui:readonly: true
                 persistentVolumeClaims:
                   type: string
                   default: "20"
+                  ui:readonly: true
                 requestsStorage:
                   type: string
                   default: "1000Gi"
+                  ui:readonly: true
 
   steps:
     - id: template
