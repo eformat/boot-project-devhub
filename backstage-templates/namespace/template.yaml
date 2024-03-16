@@ -56,7 +56,7 @@ spec:
 
       dependencies:
         size:
-          oneOf:
+          anyOf:
             - if:
                 properties:
                   size:
@@ -65,37 +65,21 @@ spec:
               then:
                 properties:
                   limitsMemory:
+                    title: Memory
                     type: string
                     default: "4Gi"
-                  requestsCpu:
-                    type: string
-                    default: "2"
-                  requestsMemory:
-                    type: string
-                    default: "4Gi"
-                  persistentvolumeclaims:
-                    type: string
-                    default: "5"
-                  requestsStorage:
-                    type: string
-                    default: "50Gi"
-              else:
-                properties:
-                  limitsMemory:
-                    type: string
-                    default: "8Gi"
-                  requestsCpu:
-                    type: string
-                    default: "4"
-                  requestsMemory:
-                    type: string
-                    default: "8Gi"
-                  persistentvolumeclaims:
-                    type: string
-                    default: "10"
-                  requestsStorage:
-                    type: string
-                    default: "100Gi"
+                  # requestsCpu:
+                  #   type: string
+                  #   default: "2"
+                  # requestsMemory:
+                  #   type: string
+                  #   default: "4Gi"
+                  # persistentvolumeclaims:
+                  #   type: string
+                  #   default: "5"
+                  # requestsStorage:
+                  #   type: string
+                  #   default: "50Gi"
 
   steps:
     - id: template
