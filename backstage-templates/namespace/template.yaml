@@ -53,6 +53,29 @@ spec:
           ui:options:
             allowedKinds: 
               - Group
+
+      dependencies:
+        includeName:
+          allOf:
+            - if:
+                properties:
+                  size:
+                    const: "small"
+              then:
+                properties:
+                  limits.memory: "4Gi"
+                  requests.cpu: "2"
+                  requests.memory: "4Gi"
+                  persistentvolumeclaims: "5"
+                  requests.storage: "50Gi"
+              else:
+                properties:
+                  limits.memory: "8Gi"
+                  requests.cpu: "4"
+                  requests.memory: "8Gi"
+                  persistentvolumeclaims: "10"
+                  requests.storage: "100Gi"
+
   steps:
     - id: template
       name: Code Fetch Skeleton + Template
@@ -67,6 +90,7 @@ spec:
           owner: ${{ parameters.owner.split("/")[1] }}
           applicationId: ${{ parameters.applicationId }}
           size: ${{parameters.size}}
+          limits.memory: ${{parameters.limits.memory}}
     - id: pull-request
       name: make a pr with the new namespace
       action: publish:github:pull-request
