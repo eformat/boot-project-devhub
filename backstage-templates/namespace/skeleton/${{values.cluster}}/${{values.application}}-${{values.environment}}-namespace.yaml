@@ -27,7 +27,7 @@ namespaces:
     resourceQuota:
       hard:
         limits.memory: "${{values.limitsMemory}}"
-        requests.cpu: "${{values.requestsCPU}}"
+        requests.cpu: "${{values.requestsCpu}}"
         requests.memory: "${{values.requestsMemory}}"
         persistentvolumeclaims: "${{values.persistentVolumeClaims}}"
         requests.storage: "${{values.requestsStorage}}"

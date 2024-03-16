@@ -151,7 +151,7 @@ spec:
           applicationId: ${{ parameters.applicationId }}
           size: ${{parameters.size}}
           limitsMemory: ${{parameters.limitsMemory}}
-          requestsCpu: ${{parameters.requestsCPU}}
+          requestsCpu: ${{parameters.requestsCpu}}
           requestsMemory: ${{parameters.requestsMemory}}
           persistentVolumeClaims: ${{parameters.persistentVolumeClaims}}
           requestsStorage: ${{parameters.requestsStorage}}
