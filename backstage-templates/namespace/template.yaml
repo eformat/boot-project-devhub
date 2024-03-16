@@ -80,7 +80,6 @@ spec:
                     default: "50Gi"
               else:
                 properties:
-                properties:
                   limitsMemory:
                     type: string
                     default: "8Gi"
