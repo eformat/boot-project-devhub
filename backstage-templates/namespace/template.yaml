@@ -54,7 +54,7 @@ spec:
           title: Size
           type: string
           description: Size of the namespace in terms of resources available
-          enum: ["small", "medium", "large"]
+          enum: ["small", "medium", "large", "custom"]
           ui:widget: radio
 
       dependencies:
@@ -135,7 +135,26 @@ spec:
                   type: string
                   default: "1000Gi"
                   ui:readonly: true
-
+            - properties:
+                size:
+                  enum:
+                    - custom
+                limitsMemory:
+                  title: Memory
+                  type: string
+                  default: "1Gi"
+                requestsCpu:
+                  type: string
+                  default: "2"
+                requestsMemory:
+                  type: string
+                  default: "4Gi"
+                persistentVolumeClaims:
+                  type: string
+                  default: "5"
+                requestsStorage:
+                  type: string
+                  default: "20Gi"
   steps:
     - id: template
       name: Code Fetch Skeleton + Template
