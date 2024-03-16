@@ -29,8 +29,9 @@ spec:
         environment:
           title: Environment
           type: string
-          enum: ["dev", "test", "prod"]
           description: Purpose for this environment
+          enum: ["dev", "test", "prod"]
+          ui:widget: radio
         description:
           title: Description
           type: string
@@ -40,6 +41,7 @@ spec:
           type: string
           description: Cluster in which the namespace for this environment will be created
           enum: ["non-prod", "prod"]
+          ui:widget: radio
         size:
           title: Size
           type: string
