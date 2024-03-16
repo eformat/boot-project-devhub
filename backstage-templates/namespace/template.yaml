@@ -143,18 +143,23 @@ spec:
                   title: Memory
                   type: string
                   default: "1Gi"
+                  ui:readonly: false
                 requestsCpu:
                   type: string
                   default: "2"
+                  ui:readonly: false
                 requestsMemory:
                   type: string
                   default: "4Gi"
+                  ui:readonly: false
                 persistentVolumeClaims:
                   type: string
                   default: "5"
+                  ui:readonly: false
                 requestsStorage:
                   type: string
                   default: "20Gi"
+                  ui:readonly: false
   steps:
     - id: template
       name: Code Fetch Skeleton + Template
