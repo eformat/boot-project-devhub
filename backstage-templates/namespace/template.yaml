@@ -52,38 +52,6 @@ spec:
           ui:widget: radio
 
       dependencies:
-        environment:
-          oneOf:
-            - properties:
-                environment:
-                  enum:
-                    - dev
-                cluster:
-                  title: Cluster
-                  type: string
-                  description: Cluster in which the namespace for this environment will be created
-                  enum: ["ocp-dev-1", "ocp-dev-2", "ocp-dev-3"]
-                  ui:widget: radio
-            - properties:
-                environment:
-                  enum:
-                    - test
-                cluster:
-                  title: Cluster
-                  type: string
-                  description: Cluster in which the namespace for this environment will be created
-                  enum: ["ocp-npr-1", "ocp-npr-2"]
-                  ui:widget: radio
-            - properties:
-                environment:
-                  enum:
-                    - prod
-                cluster:
-                  title: Cluster
-                  type: string
-                  description: Cluster in which the namespace for this environment will be created
-                  enum: ["ocp-prod-1", "ocp-prod-2"]
-                  ui:widget: radio
         size:
           oneOf:
             - properties:
@@ -161,6 +129,39 @@ spec:
                   type: string
                   default: "1000Gi"
                   ui:readonly: true
+
+        environment:
+          oneOf:
+            - properties:
+                environment:
+                  enum:
+                    - dev
+                cluster:
+                  title: Cluster
+                  type: string
+                  description: Cluster in which the namespace for this environment will be created
+                  enum: ["ocp-dev-1", "ocp-dev-2", "ocp-dev-3"]
+                  ui:widget: radio
+            - properties:
+                environment:
+                  enum:
+                    - test
+                cluster:
+                  title: Cluster
+                  type: string
+                  description: Cluster in which the namespace for this environment will be created
+                  enum: ["ocp-npr-1", "ocp-npr-2"]
+                  ui:widget: radio
+            - properties:
+                environment:
+                  enum:
+                    - prod
+                cluster:
+                  title: Cluster
+                  type: string
+                  description: Cluster in which the namespace for this environment will be created
+                  enum: ["ocp-prod-1", "ocp-prod-2"]
+                  ui:widget: radio
 
   steps:
     - id: template
