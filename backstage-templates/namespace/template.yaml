@@ -60,7 +60,7 @@ spec:
             - if:
                 properties:
                   size:
-                    const: "small"
+                    enum: "small"
               then:
                 properties:
                   limitsMemory:
