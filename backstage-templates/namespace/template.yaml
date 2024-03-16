@@ -162,4 +162,4 @@ spec:
         repoUrl: github.com?repo=boot-project-values&owner=eformat
         branchName: ${{ parameters.applicationId }}-${{ parameters.environment }}-${{ parameters.cluster }}
         title: Namespace Request - clusters/${{ parameters.environment }}/${{ parameters.cluster }}/${{ parameters.applicationId }}-${{ parameters.environment }}
-        description: This is a request for the creation of the ${{ parameters.applicationId }}-${{ parameters.environment }} namespace in the ${{ parameters.cluster }} from the ${{ parameters.owner }} team
+        description: This is a request for the creation of the ${{ parameters.applicationId }}-${{ parameters.environment }} namespace in the ${{ parameters.cluster }} cluster from ${{ parameters.owner }}
