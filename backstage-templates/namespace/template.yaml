@@ -63,18 +63,39 @@ spec:
                     const: "small"
               then:
                 properties:
-                  limits.memory: "4Gi"
-                  requests.cpu: "2"
-                  requests.memory: "4Gi"
-                  persistentvolumeclaims: "5"
-                  requests.storage: "50Gi"
+                  limitsMemory:
+                    type: string
+                    default: "4Gi"
+                  requestsCpu:
+                    type: string
+                    default: "2"
+                  requestsMemory:
+                    type: string
+                    default: "4Gi"
+                  persistentvolumeclaims:
+                    type: string
+                    default: "5"
+                  requestsStorage:
+                    type: string
+                    default: "50Gi"
               else:
                 properties:
-                  limits.memory: "8Gi"
-                  requests.cpu: "4"
-                  requests.memory: "8Gi"
-                  persistentvolumeclaims: "10"
-                  requests.storage: "100Gi"
+                properties:
+                  limitsMemory:
+                    type: string
+                    default: "8Gi"
+                  requestsCpu:
+                    type: string
+                    default: "4"
+                  requestsMemory:
+                    type: string
+                    default: "8Gi"
+                  persistentvolumeclaims:
+                    type: string
+                    default: "10"
+                  requestsStorage:
+                    type: string
+                    default: "100Gi"
 
   steps:
     - id: template
@@ -90,7 +111,7 @@ spec:
           owner: ${{ parameters.owner.split("/")[1] }}
           applicationId: ${{ parameters.applicationId }}
           size: ${{parameters.size}}
-          limits.memory: ${{parameters.limits.memory}}
+          limitsMemory: ${{parameters.limitsMemory}}
     - id: pull-request
       name: make a pr with the new namespace
       action: publish:github:pull-request
