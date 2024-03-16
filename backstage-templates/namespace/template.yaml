@@ -151,10 +151,10 @@ spec:
           applicationId: ${{ parameters.applicationId }}
           size: ${{parameters.size}}
           limitsMemory: ${{parameters.limitsMemory}}
-          requestsCpu: ${{values.requestsCPU}}
-          requestsMemory: ${{values.requestsMemory}}
-          persistentVolumeClaims: ${{values.persistentVolumeClaims}}
-          requestsStorage: ${{values.requestsStorage}}
+          requestsCpu: ${{parameters.requestsCPU}}
+          requestsMemory: ${{parameters.requestsMemory}}
+          persistentVolumeClaims: ${{parameters.persistentVolumeClaims}}
+          requestsStorage: ${{parameters.requestsStorage}}
     - id: pull-request
       name: make a pr with the new namespace
       action: publish:github:pull-request
