@@ -42,12 +42,6 @@ spec:
           description: Cluster in which the namespace for this environment will be created
           enum: ["non-prod", "prod"]
           ui:widget: radio
-        size:
-          title: Size
-          type: string
-          description: Size of the namespace in terms of resources available
-          enum: ["small", "medium", "large"]
-          ui:widget: radio
         owner:
           title: Owner
           type: string
@@ -56,6 +50,12 @@ spec:
           ui:options:
             allowedKinds: 
               - Group
+        size:
+          title: Size
+          type: string
+          description: Size of the namespace in terms of resources available
+          enum: ["small", "medium", "large"]
+          ui:widget: radio
 
       dependencies:
         size:
@@ -100,6 +100,26 @@ spec:
                 requestsStorage:
                   type: string
                   default: "100Gi"
+            - properties:
+                size:
+                  enum:
+                    - large
+                limitsMemory:
+                  title: Memory
+                  type: string
+                  default: "16Gi"
+                requestsCpu:
+                  type: string
+                  default: "12"
+                requestsMemory:
+                  type: string
+                  default: "16Gi"
+                persistentVolumeClaims:
+                  type: string
+                  default: "20"
+                requestsStorage:
+                  type: string
+                  default: "1000Gi"
 
   steps:
     - id: template
