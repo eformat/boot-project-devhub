@@ -161,5 +161,5 @@ spec:
       input:
         repoUrl: github.com?repo=boot-project-values&owner=eformat
         branchName: ${{ parameters.applicationId }}-${{ parameters.environment }}-${{ parameters.cluster }}
-        title: Namespace Request - clusters/${{ parameters.environment }}/${{ parameters.cluster }}/${{ parameters.applicationId }}
+        title: Namespace Request - clusters/${{ parameters.environment }}/${{ parameters.cluster }}/${{ parameters.applicationId }}-${{values.environment}}
         description: This is a request for the creation of the ${{ parameters.applicationId }}-${{ parameters.environment }} namespace in the ${{ parameters.cluster }} from the ${{ parameters.owner }} team
