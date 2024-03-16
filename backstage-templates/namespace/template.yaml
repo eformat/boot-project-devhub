@@ -40,7 +40,7 @@ spec:
           title: Cluster
           type: string
           description: Cluster in which the namespace for this environment will be created
-          enum: ["non-prod", "prod"]
+          enum: ["dev", "non-prod", "prod"]
           ui:widget: radio
         owner:
           title: Owner
@@ -160,6 +160,6 @@ spec:
       action: publish:github:pull-request
       input:
         repoUrl: github.com?repo=boot-project-values&owner=eformat
-        branchName: ${{ parameters.applicationId }}-${{ parameters.environment }}
+        branchName: ${{ parameters.cluster }}-${{ parameters.applicationId }}-${{ parameters.environment }}
         title: clusters/${{ parameters.cluster }}/${{ parameters.applicationId }}-${{ parameters.environment }} namespace
         description: This is a request for the creation of the ${{ parameters.applicationId }}-${{ parameters.environment }} namespace in the ${{ parameters.cluster }} from the ${{ parameters.owner }} team
