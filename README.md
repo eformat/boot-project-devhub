@@ -32,5 +32,5 @@ helm upgrade \
   --namespace=redhat-developer-hub \
   --version 1.0.0-1 \
   --set clusterRouterBase=apps.${BASE_DOMAIN} \
-  openshift-helm-charts/redhat-developer-hub \
+  openshift-helm-charts/redhat-developer-hub
 ```
