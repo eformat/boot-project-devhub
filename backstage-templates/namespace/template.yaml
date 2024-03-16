@@ -56,7 +56,7 @@ spec:
 
       dependencies:
         size:
-          allOf:
+          oneOf:
             - if:
                 properties:
                   size:
